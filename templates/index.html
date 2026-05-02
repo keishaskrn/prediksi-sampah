@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediksi Sampah Jabar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h3 class="text-center mb-4">Prediksi Sampah Jawa Barat</h3>
+
+        <form action="/predict" method="post">
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <input type="number" name="curah_hujan" class="form-control" placeholder="Curah Hujan">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="number" name="suhu" class="form-control" placeholder="Suhu">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="number" name="kelembaban" class="form-control" placeholder="Kelembaban">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="number" name="populasi" class="form-control" placeholder="Populasi">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="number" name="kepadatan" class="form-control" placeholder="Kepadatan">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mt-3">
+                Prediksi
+            </button>
+        </form>
+
+        {% if hasil %}
+        <div class="alert alert-success mt-4 text-center">
+            <strong>Hasil Prediksi:</strong><br>
+            {{ hasil }} ton/hari
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
